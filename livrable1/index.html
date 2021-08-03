@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Livrable 1 Vue JS</title>
+</head>
+
+<body>
+    <div id="app">
+        <label for="input_h1">Contenu de h1 :</label>
+        <input type="text" name="input_h1" v-model="valueH1">
+        <h1 :class="{ red: isRed }">{{ valueH1 }}</h1>
+
+        <label for="input_h2">Contenu de h2 :</label>
+        <input type="text" name="input_h2" v-model="newText">
+        <button @click="refresh_h2">Valider</button>
+        <h2 :class="{ red: isRed }">{{ valueH2 }}</h2>
+
+        <label for="color">Afficher en rouge</label>
+        <input type="checkbox" name="color" id="red" v-model="isRed">
+
+        <label for="img">Afficher l'image</label>
+        <input type="checkbox" name="img" id="img" v-model="showImg">
+        <p><img src="./bad_spirit.png" alt="" v-show="showImg"></p>
+    </div>
+
+    <script src="./vue.js"></script>
+</body>
+
+</html>
